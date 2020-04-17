@@ -1,11 +1,11 @@
-﻿
+
 
 /*
 ********************************************************************
 版本声明：
                                    ╭════════════════════════╮
-                                  ║         〖课题设计：学生通讯录管理系统〗         ║
-         ╭══════════════════════┤设计时间：2019.3.3 ├══════════════════╮
+                                  ║         〖课题设计：〗         ║
+         ╭══════════════════════┤设计时间：2020.4.17 ├══════════════════╮
         ║                        ║   设计人：  2016级工业工程专业 邝伟杜Tridu³³     ║                           ║
         ║                        ╰═════════════════════════╯                           ║
       　║                                        ★    关于我的Code     ★                                        ║ 
@@ -42,7 +42,7 @@
         ║----------------------------------------------------------------------------------------------------------║
     　　║                                                                                                          ║
         ║                     ╭──────────────────────────────╮                     ║
-        ╰══════════┤   ★★★★★★  Tridu³³，2055969978@qq.com★★★★★★★     ├══════════╯
+        ╰══════════┤   ★★★★★★  Tridu³³，tridu33@qq.com★★★★★★★     ├══════════╯
                               ╰───────────────────────────────╯
 
 							  //想实现：
@@ -67,8 +67,17 @@
 // C_Contacts_Tridu33.cpp : 定义控制台应用程序的入口点。
 //
 #define _CRT_SECURE_NO_WARNINGS  
-#include "stdafx.h"//编译程序会先从当前目录中找文件，生成预编译头文件！预编译，是为了提高编译速度！
-#include"stdio.h"//一般是用双引号来引用自己编写的文件，而用尖括号引用系统标准的文件。
+// 包括 SDKDDKVer.h 将定义可用的最高版本的 Windows 平台。
+
+// 如果要为以前的 Windows 平台生成应用程序，请包括 WinSDKVer.h，并将
+// WIN32_WINNT 宏设置为要支持的平台，然后再包括 SDKDDKVer.h。
+
+#include <SDKDDKVer.h>
+#include <stdio.h>
+#include <tchar.h>//一般是用双引号来引用自己编写的文件，而用尖括号引用系统标准的文件。
+//在此处引用程序需要的其他头文件
+//编译程序会先从当前目录中找文件，生成预编译头文件！预编译，是为了提高编译速度！
+
 #include<stdlib.h>//用于数值转换、内存分配以及具有其他相似任务的函数。free()
 #include<conio.h>//Console Input/Output（控制台输入输出）的简写，其中定义了通过控制台进行数据输入和数据输出的函数，主要是一些用户通过按键盘产生的对应操作，比如getch()函数等等。
 #include<string.h>//字符串处理
@@ -646,12 +655,12 @@ printf("6.修改update\n ");
 
 				printf("地址:\n");
 				//fflush(stdin);//？？？？？？？？？？？？？？？清空输入缓存.在上一次使用scanf后没有清空输入缓存, 这样你再次使用scanf的时候函数就可能会认为你已经输入过了. 改进的办法很简单, 就是在scanf语句之前使用fflush();
-				//scanf_s("%s",students[i].addr);//scanf_s("%s",&students[i].addr;)这句运行就死机不知道为什么https://ask.csdn.net/questions/326768
+				//scanf("%s",students[i].addr);//scanf("%s",&students[i].addr;)这句运行就死机不知道为什么https://ask.csdn.net/questions/326768
 				char str4[30];
 				scanf("%s",str4);
 				strcpy(students[i].addr,str4);
 				printf("生日:\n");
-				//scanf_s("%s",&students[i].birthday);
+				//scanf("%s",&students[i].birthday);
 				char str5[20];
 				scanf("%s",str5);
 				strcpy(students[i].addr,str5);
@@ -894,7 +903,7 @@ int _tmain(int argc, _TCHAR* argv[]){
 		ch[n] = '\0';
 		if(0 == strcmp(ch,"201612")){
 			menu();
-			scanf_s("%d",&c);
+			scanf("%d",&c);
 			printf("%d",&c);
 			while(c){
 					switch(c){
@@ -914,7 +923,7 @@ int _tmain(int argc, _TCHAR* argv[]){
 						}; 		
 					_getch();//会等待你按下任意键，再继续执行下面的语句
 					menu();
-					scanf_s("%d",&c);//可以换成scanf_s("%d",&n);'scanf': This function or variable may be unsafe. 		
+					scanf("%d",&c);//可以换成sscanf_("%d",&n);'scanf': This function or variable may be unsafe. 		
 			};
 		}
         else{
@@ -938,5 +947,8 @@ return 0;
    //        //     //    //     //     //      //    //     //            //
   //        //     //     ///////////  //      //    //        //   //////
 /////////////////////////////////////////////////////////////////////////////////////////////
+	  
+
+
 	  
 
